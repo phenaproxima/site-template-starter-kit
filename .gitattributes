@@ -1,0 +1,3 @@
+# Allow the lock file to be committed for development purposes, but never
+# include it in sites that are created from this template.
+/composer.lock export-ignore

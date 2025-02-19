@@ -1,0 +1,3 @@
+# Never commit installed dependencies to the repository; the correct
+# versions can always be reinstalled thanks to composer.lock.
+/vendor
