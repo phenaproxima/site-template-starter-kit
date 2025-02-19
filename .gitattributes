@@ -1,3 +1,7 @@
 # Allow the lock file to be committed for development purposes, but never
 # include it in sites that are created from this template.
 /composer.lock export-ignore
+
+# The custom recipe template is only intended for developers creating site
+# templates, and shouldn't be included in the distributed site template.
+/custom-recipe-template export-ignore
