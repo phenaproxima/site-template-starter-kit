@@ -1,0 +1,13 @@
+# This needs to be here, and its value must be `theme`.
+type: theme
+
+# This should match whatever is in `installer.info.yml`.
+core_version_requirement: '^11.1'
+
+# The theme that this theme should extend. If in doubt, `claro` is a safe choice.
+# It's best not to change this unless you know what you're doing.
+base theme: claro
+
+# You can change these to whatever you like, but don't remove them.
+name: Installer Theme
+description: 'Themes the installer. Not to be used in production.'

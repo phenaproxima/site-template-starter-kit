@@ -1,0 +1,41 @@
+# This needs to be here, and its value must be `profile`.
+type: profile
+
+# Change this to whatever your minimum required version of Drupal core is, depending
+# on the needs of the recipes you want to apply.
+core_version_requirement: '^11.1'
+
+# Change this to the product name of your site template.
+name: Drupal
+
+distribution:
+  # This should be the same as `name`, above.
+  name: Drupal
+  install:
+    theme: installer_theme
+    # Change this to a URL path where users should be redirected after
+    # the install completes. The user will be automatically logged in, so
+    # this can be a path that is accessible to logged-in users.
+    finish_url: '/'
+
+# A list of forms that should be presented to the user before choosing database
+# settings and installing the database. Each of these forms must implement
+# \Drupal\RecipeKit\Installer\FormInterface. You can put these in any order you
+# like, or add and remove forms from this list as desired.
+forms:
+  # This form allows users to choose additional recipes to apply. It is automatically
+  # skipped if this profile doesn't have any optional recipe combinations (see below).
+  - '\Drupal\RecipeKit\Installer\Form\RecipesForm'
+  # Asks the user to give their site a name.
+  - '\Drupal\RecipeKit\Installer\Form\SiteNameForm'
+
+recipes:
+  # This should be a list of recipes' Composer package names that should always be
+  # applied during the install process.
+  required: []
+
+  # This should be a set of recipe combinations to show to the user as choices at the
+  # start of the install process. The keys should be the user-facing names of the
+  # combinations, and the values should be lists of the Composer package names of the
+  # recipes that make up that combination.
+  optional: {}

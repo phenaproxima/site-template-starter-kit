@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains runtime theme code to alter the look and feel of the installer. You
+ * should generally leave this file alone unless you know what you're doing.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\File\FileUrlGeneratorInterface;
+
+/**
+ * Implements template_preprocess_install_page().
+ */
+function installer_theme_preprocess_install_page(array &$variables): void {
+  $theme_path = \Drupal::theme()->getActiveTheme()->getPath();
+  // Provide the base URL to this theme, which can be useful for referencing
+  // images  and other assets in the install-page.html.twig template
+  // (e.g., `{{ theme_path }}/images/foo.png`).
+  $variables['theme_path'] = \Drupal::service(FileUrlGeneratorInterface::class)
+    ->generateString($theme_path);
+}

@@ -1,0 +1,15 @@
+# The initial administrator role created when the site is installed. You
+# should not delete this file, or things may break.
+
+# This should be left as-is.
+id: administrator
+
+# If you know what you're doing, you can change these as desired. If in
+# doubt, it's safest to leave these untouched.
+langcode: en
+status: true
+dependencies: {  }
+label: Administrator
+weight: 3
+is_admin: true
+permissions: {  }
