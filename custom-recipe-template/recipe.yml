@@ -1,10 +1,55 @@
-# @todo Document every single thing in here.
-# name: ''
+# A name for this recipe.
+name: 'My Recipe'
+
+# @todo Describe this.
 # type: ''
-# description: ''
+
+# A brief, one- or two-sentence description of this recipe.
+description: 'This will accomplish incredible things.'
+
+# @todo Describe this.
 # recipes: []
+
+# @todo Describe this.
 # install: []
-# config:
-#   strict: false
-#   import: {}
+
+# Recipes can get configuration from two places:
+# - Their own `config` directory. If any of that configuration already exists
+#   in the site, the `strict` rule will determine what happens.
+# - Other modules or themes. See the `import` section below.
+config:
+  # What to do if any of the configuration in the `config` directory already
+  # exists in the site. This can be one of three things:
+  # - `false`: The config that's already in the site will be respected, regardless
+  #   of whether it matches what's in the `config` directory. This is usually a
+  #   safe choice, but can be problematic for certain types of configuration, like
+  #   field storage config entities.
+  # - `true`: The config files in the `config` directory need to EXACTLY match
+  #    what is already in the site, or the recipe will fail with an error.
+  # - A list of config entity names: this is like `true`, but only for the config
+  #   in the list. All other existing config will be respected as-is.
+  strict: false
+
+  # Recipes can import configuration from modules and themes. For any given module or
+  # theme, they can import either of ALL of its config (including optional config,
+  # regardless of whether its dependencies are present), or a list of specific items.
+  # Note that every module or theme that a recipe wants to import config from, MUST either
+  # be listed in the recipe's `install` list, or installed by a recipe that this recipe
+  # depends on.
+  # Example:
+  #
+  # import:
+  #   node: '*'
+  #   content_moderation:
+  #     - views.view.moderated_content
+  #     - workflows.workflow.editorial
+  #
+  # In this example, all of the config from the Node module is imported (including optional
+  # config), whereas ONLY the moderated_content view and editorial workflow are imported
+  # from the Content Moderation module. Configuration is that is not an entity (known as
+  # "simple config" -- basic module settings, for example) is ALWAYS imported, regardless
+  # of whether or not it's listed.
+  import: {}
+
+#   @todo Describe this.
 #   actions: {}
