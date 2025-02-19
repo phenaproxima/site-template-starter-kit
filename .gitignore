@@ -1,3 +1,9 @@
 # Never commit installed dependencies to the repository; the correct
 # versions can always be reinstalled thanks to composer.lock.
 /vendor
+
+# Never commit the web root, since it can be reconstructed by Composer. The only
+# exception to this is the install profile, which is a custom part of the site
+# site template and should therefore be included.
+/web
+!/web/profiles/installer
