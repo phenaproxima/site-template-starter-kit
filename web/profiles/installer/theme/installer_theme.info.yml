@@ -3,15 +3,13 @@
 # This file defines the theme requirements for the Drupal installer.
 # ###
 
-# This needs to be here, and its value must be `theme`.
-# The `theme` type is required for this theme to work in that installer.
+# The `theme` type is required for this theme to work in the installer.
 type: theme
 
 # This should match the version that is in `installer.info.yml`.
 core_version_requirement: '^11.1'
 
-# The theme that this theme should extend.
-# If in doubt, `claro` is a safe choice.
+# The theme that this theme should extend. If in doubt, `claro` is a safe choice.
 base theme: claro
 
 # Name and description are required. Change the values to fit your needs.
