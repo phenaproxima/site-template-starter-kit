@@ -1,22 +1,24 @@
-# installer.info.yml 
+# ###
+# installer.info.yml
 # This file defines the site template's requirements for the Drupal installer.
+# ###
 
 # The `profile` type is required for the installer to work.
 type: profile
 
-# Update this to the minimum version of Drupal core that your recipes require.
+# Change this to the minimum version of Drupal core that your recipes require.
 core_version_requirement: '^11.1'
 
 # Change this to the product name of your site template.
-name: Drupal site template
+name: 'Drupal site template'
 
 distribution:
   # This should be the same as `name`, above.
-  name: Drupal site template
+  name: 'Drupal site template'
   install:
     # Theme for the installer.
     # This starter kit includes the example `installer_theme`, but this can use
-    # any theme that is in the codebase.
+    # any theme that is in the code base.
     theme: installer_theme
     # Change this to a URL path where users should be redirected after the
     # install completes. The user will be automatically logged in, so this can
@@ -24,35 +26,35 @@ distribution:
     finish_url: '/'
 
 # List the forms to be presented to the user before configuring and installing
-# the database. You can put add, remove or reorder the forms as needed.
-# When creating additional forms, they must implement
+# the database. You can add, remove or reorder the forms as needed. When creating
+# additional forms, they must implement
 # \Drupal\RecipeKit\Installer\FormInterface.
 forms:
   # Forms that come with this starter kit:
-  # Optional Recipes
-  # This form allows users to choose additional recipes to apply. It is skipped
-  # if this profile doesn't have any optional recipe combinations (see below).
+  # Optional recipes: This form allows users to choose additional recipes to apply.
+  # It is skipped if this profile doesn't have any optional recipe combinations (see
+  # below).
   - '\Drupal\RecipeKit\Installer\Form\RecipesForm'
-  # Site Name
-  # Asks the user to give their site a name.
+  # Site name: Asks the user to give their site a name.
   - '\Drupal\RecipeKit\Installer\Form\SiteNameForm'
 
 recipes:
-  # List the recipes with their Composer package names to be applied during the
+  # List the recipes, with their Composer package names, to be applied during the
   # installation process.
   required: []
   # Example:
-  #  - drupal/events
-  #  - kanopi/saplings
+  #   - drupal/events
+  #   - kanopi/saplings
 
   # List the optional recipes that are displayed as choices during the install.
-  # The keys should be the user-facing names of the recipes.
-  # The values should be lists of the recipes with their Composer package names.
+  # The keys should be the user-facing names of the recipes. The values should
+  # be lists of the recipes, with their Composer package names.
   optional: {}
   # Example:
-  #  'Blog':
-  #    - drupal/drupal_cms_blog
-  # You can create combinations of recipes by listing multiple.
+  #   'Blog':
+  #     - drupal/drupal_cms_blog
+  #
+  # You can create combinations by listing multiple recipes:
   #  'All SEO Tools':
-  #    - drupal/drupal_cms_seo_base
+  #    - drupal/drupal_cms_seo_basic
   #    - drupal/drupal_cms_seo_tools
